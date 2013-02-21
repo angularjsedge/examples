@@ -1,0 +1,13 @@
+<html>
+<script type="text/javascript" src="/path/to/angular.js"></script>
+<script type="text/javascript">
+    angular.module('app', []).run(function ($rootScope, $window) {
+        $rootScope.myAlert = function () {
+            $window.alert('Chris!');
+        };
+    });
+</script>
+<body ng-app="app">
+<button ng-click="myAlert()">Alert My Name</button>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="blog">
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>My Important Blog</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js" type="text/javascript"
+            charset="utf-8"></script>
+    <script src="blog.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body ng-controller="MainCtrl">
+<h1>My Important Blog</h1>
+
+<div id="posts">
+    <h2>{{posts[0].title}}</h2>
+
+    <p>{{posts[0].body}}</p>
+
+    <p><em>posted on {{posts[0].date|date:'short'}} by {{posts[0].author}}</em></p>
+</div>
+</body>
+</html>

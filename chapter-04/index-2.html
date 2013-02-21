@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="blog">
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title ng-bind-template="{{title}}"></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js" type="text/javascript"
+            charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"
+            charset="utf-8"></script>
+    <script src="blog.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<ng-include src="'header.html'"></ng-include>
+<div ng-controller="ContentCtrl">
+    <new-post-area post="new_post" cancel-text="Cancel" save-text="Save" cancel="cancel" save="save"></new-post-area>
+    <div id="posts-form">
+        Order By: <select ng-model="order">
+        <option value="title">Title</option>
+        <option value="date">Date</option>
+    </select>
+        <input type="checkbox" ng-model="descending"/> Descending <br/>
+        Search: <input type="text" ng-model="filter"/>
+    </div>
+    <div id="{{post.id}}" ng-repeat="post in posts|orderBy:order:descending|filter:filter" ng-class-even="'even'"
+         ng-class-odd="'odd'">
+        <ng-switch on="post.editing">
+            <div ng-switch-when="true">
+                <div class="important-background-color" color="#EEE">
+                    <input type="text" ng-model="post.temp.title"/><br/>
+                    <textarea ng-model="post.temp.body"></textarea><br/>
+                    <button ng-click="cancel(post)">Cancel</button>
+                    <button ng-click="save(post)">Save Changes</button>
+                </div>
+            </div>
+            <div ng-switch-default>
+                <h2 ng-click="edit(post)">{{post.title}}</h2>
+
+                <p ng-click="edit(post)" ng-bind-html-unsafe="post.body"></p>
+
+                <p><em>posted on {{post.date|date:'short'}} by {{post.author}}</em></p>
+            </div>
+            <hr/>
+            <button ng-click="newPost()" fade-in="!new_post">New Post</button>
+        </ng-switch>
+    </div>
+</div>
+<ng-include src="'footer.html'"></ng-include>
+</body>
+</html>
