@@ -28,19 +28,18 @@
         };
     });
 
-    // Our first directive. Will use jQuery to fade in or fade out a node based on an expression.
-    blog.directive('fadeIn', function () {
-        return {
-            restrict: 'A',
-            link: function (scope, element, attribs) {
-                scope.$watch(attribs.fadeIn, function (value) {
-                    if (value) {
-                        element.fadeIn();
-                    } else {
-                        element.fadeOut();
-                    }
-                });
-            }
+    // Our first directive.  Toggles boldface on node's contents when clicked.
+    blog.directive('boldClick', function() {
+        return function(scope, element) {
+            var bold = false;
+            element.click(function() {
+                if (bold) {
+                    element.css('font-weight', 'normal');
+                } else {
+                    element.css('font-weight', 'bold');
+                }
+                bold = !bold;
+            });
         };
     });
 })();

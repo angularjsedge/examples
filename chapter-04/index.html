@@ -30,7 +30,7 @@
             <div ng-switch-default>
                 <h2 ng-click="edit(post)">{{post.title}}</h2>
 
-                <p ng-click="edit(post)" ng-bind-html-unsafe="post.body"></p>
+                <p ng-click="edit(post)" bold-click ng-bind-html-unsafe="post.body"></p>
 
                 <p><em>posted on {{post.date|date:'short'}} by {{post.author}}</em></p>
             </div>
