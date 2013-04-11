@@ -8,6 +8,7 @@ describe('Blog Directives', function () {
         return compiled;
     }
 
+    beforeEach(module('blog'));
     beforeEach(inject(function ($injector, $rootScope) {
         $compile = $injector.get('$compile');
         scope = $rootScope.$new();
