@@ -12,3 +12,5 @@ Working examples for:
 * Chapter 6: http://plnkr.co/PRQ4mf3LC79lERRxmi5W
 * Chapter 7: http://plnkr.co/eSUjloJJH89q4j9Rb4v9
 * Chapter 8: http://plnkr.co/GDjc4x83s6w1RntbsuVj
+* Chapter 9: http://plnkr.co/mIvoiC2E7UNwxck9ZYll
+* Chapter 10: http://plnkr.co/5CjQY3fAIszslWAVDiHL
