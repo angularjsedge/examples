@@ -1,3 +1,4 @@
+// note no module here; not necessary for the example
 function SomeCtrl($scope, $log) {
     $scope.foo = 'bar';
 

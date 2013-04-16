@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp', []);
 // provides some data and a randomize function
-function MyCtrl($scope) {
+myApp.controller('MyCtrl', function($scope) {
     $scope.data = [1, 2, 4, 8, 16, 32];
 // randomizes the order of the $scope.data array.
     $scope.randomize = function () {
@@ -14,7 +14,8 @@ function MyCtrl($scope) {
             $scope.data[j] = tempi;
         }
     };
-}
+});
+
 // puts a D3 div-based bar chart on a tag, and updates it
 // as the model changes.
 myApp.directive('barChart', function () {
