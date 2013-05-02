@@ -69,7 +69,9 @@
             post.date = new Date();
             post.author = 'me'; // in lieu of an authentication system
             post.editing = false;
-            $scope.posts.unshift(post); // new posts go at the top
+            if ($scope.new_post) {
+                $scope.posts.unshift($scope.new_post); // new posts go at the top
+            }
             delete $scope.new_post;
         };
         // Cancels a post edit. Does not copy temp data, and sets the editing flag

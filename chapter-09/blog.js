@@ -89,7 +89,9 @@
         // and eliminates the 'new_post' from the scope.
         $scope.save = function (post) {
             post.save();
-            $scope.posts.unshift(post);
+            if ($scope.new_post) {
+                $scope.posts.unshift($scope.new_post); // new posts go at the top
+            }
             delete $scope.new_post;
         };
 
